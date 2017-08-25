@@ -14,4 +14,4 @@ router.get('/users', function(req, res){
     })
 })
 
-module.exports = router
+module.exports = routers

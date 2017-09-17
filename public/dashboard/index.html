@@ -3,10 +3,18 @@
   <head>
     <meta charset="utf-8">
     <title>Dashboard</title>
+    <link rel="stylesheet" href="custom.css">
   </head>
   <body>
     <h1>Welcome to your dashboard</h1>
-    <button type="button" name="button" onclick="logout()">Log out <span uk-icon="icon: sign-out"></span></button>
+    <div id="secrets-data">
+
+    </div>
+
+
+    <button style="margin-top: 50px" type="button" name="button" onclick="logout()">Log out <span uk-icon="icon: sign-out"></span></button>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="app.js" charset="utf-8"></script>
   </body>
 </html>

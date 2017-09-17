@@ -63,3 +63,11 @@ button{
   font-size: 20px;
   border: 0px;
 }
+
+.command-line{
+  font-family: monospace;
+  font-size: 18px;
+  background-color: white;
+  padding: 20px;
+  margin-bottom: 10px;
+}

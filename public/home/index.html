@@ -9,7 +9,7 @@
       <div class="cut-container">
         <h1>Express with Auth<span style="color: #CCC">[entication]</span></h1>
         <h2>A JavaScript web app that enables you to get <span class="highlight">authentication</span> and <span class="highlight">authorization</span> running fast.</h2>
-        <h3>NOTE: We took care to make sure this package is in line with the best JavaScript security. Take a nap because you can rest easy. Awe, you're so cute when your sleeping...</h3>
+        <h3>This package has the best JavaScript security. Take a nap because you can rest easy. Awe, you're so cute when your sleeping...</h3>
         <img width="20px" style="margin-right: 20px" src="assets/jwt-logo.png" alt=""><img width="60px" src="assets/express-logo.svg" alt="">
       </div>
 <main id="container">
@@ -45,11 +45,60 @@
 
 <div class="cut-container">
   <h1>Getting Started</h1>
-  <h2>The <span class="highlight-2">sign up</span> and <span class="highlight-2">log in</span> forms above will work once you follow a few steps. Ready?</h2>
-  <p>First, note that what you see here displayed with HTML is just a shortend getting started. An "rapid setup" if you will. The longer more detailed version can be found over on the <a href="#">github Read Me</a> or the README.md in the root of this package you just spun up.</p>
+  <h3>The <span class="highlight-2">sign up</span> and <span class="highlight-2">log in</span> forms above will work once you follow a few steps. Ready?</h3>
+  <p>First, note that what you see here displayed with HTML is just a shortend getting started. A "rapid setup" if you will. The more detailed version can be found on the <a href="https://github.com/ericwallen/express-with-auth">github Read Me</a> or the README.md in the root of this package you just spun up.</p>
   <br>
-  <h3>Step 1</h3>
+  <h2>Step 1 - Install Dependencies</h2>
   <p>This is a node package with many dependencies. Assuming you have node installed run the following command whilst inside your projects root directory</p>
+  <div class="command-line">
+    npm install
+  </div>
+
+  <h2>Step 2 - Create a Database</h2>
+  <p>For this package to work out of the box you will want to name your database <span class="highlight-2">exampledb</span>. If you want to change that name look in the root of the package for a file called knexfile.js. Inside that you will see the path to <span class="highlight-2">postgresql://localhost/exampledb</span>. Change that to whatver your heart desires. The command you will use to create the db will look like this.</p>
+  <div class="command-line">
+    createdb exampledb
+  </div>
+
+  <h2>Step 3 - Migrate & Seed Database</h2>
+  <p>All the migration and seed files are read to go so all you have to do is run the commands below. Below is a ERD diagram of how the schema will be laid out unless you change it before running the commands</p>
+  <img style="margin-bottom: 10px" src="assets/erd.png" width="600px" alt="">
+
+  <div class="command-line">
+    knex migrate:latest
+  </div>
+
+  <div class="command-line">
+    knex seed:run
+  </div>
+
+  <h2>Step 4 - Verify Everything is Working Locally</h2>
+  <p><span class="highlight-2">Log in</span> to some of these accounts to make sure everything is working. You will see the users data from a dasboard as well as a secret specific to each one. Ater you are done doing that then you can <span class="highlight-2">create a new account</span> for yourself and log in to that.</p>
+
+  <h4>Batman</h4>
+  <div class="command-line">
+    email: darkness@pitchblack.ceo <br>
+    password: password
+  </div>
+
+  <h4>Superman</h4>
+  <div class="command-line">
+    email: super@man.com <br>
+    password: password
+  </div>
+
+  <h4>Wonder Woman</h4>
+  <div class="command-line">
+    email: women@kickass.com <br>
+    password: password
+  </div>
+
+  <h4>Captian America</h4>
+  <div class="command-line">
+    email: yeah@merica.com <br>
+    password: password
+  </div>
+
 
 </div>
 <script src="app.js" charset="utf-8"></script>

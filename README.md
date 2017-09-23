@@ -23,7 +23,8 @@ For this package to work out of the box you will want to name your database exam
 
 ![](public/home/assets/erd.png)
 
-All the migration and seed files are read to go so all you have to do is run the commands below. Below is a ERD diagram of how the schema will be laid out unless you change it before running the commands
+All the migration and seed files are ready to go. All you have to do is run the commands below. Below is a ERD diagram of how the schema will be laid out unless you change it before running the commands
 
 `knex migrate:latest`
+
 `knex seed:run`

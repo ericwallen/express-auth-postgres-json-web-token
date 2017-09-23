@@ -69,7 +69,7 @@ router.post('/login', function(req, res, next) {
 //busines by user from user dashboard
 router.get('/secrets-by-user/:id', function(req, res){
     knex.from('user')
-    .innerJoin('user_secret', 'user.id', 'user_id')
+    .innerJoin('user_secret', 'user.noid', 'user_id')
     .where('user.id', req.params.id)
     .innerJoin('secret', 'secret_id', 'secret.id')
     .then(function(data){

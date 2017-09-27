@@ -25,8 +25,10 @@ document.querySelector('#signUpSubmit').addEventListener('click', function(event
     .then(response => {
       if (response.message){
         statusMessage.innerHTML = response.message
+        console.log(response);
       } else if (response.error){
         statusMessage.innerHTML = response.error
+        console.log(response);
       } else {
         console.log(response);
       }
@@ -43,9 +45,11 @@ document.querySelector('#logInSubmit').addEventListener('click', function(event)
    .then(response => {
      if (response.error) {
        statusMessage.innerHTML = response.error
+       console.log(response);
      } else {
        localStorage.setItem('token', response.data)
        location.href = 'dashboard'
+       console.log(response);
      }
    })
 })

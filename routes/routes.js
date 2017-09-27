@@ -5,6 +5,7 @@ const cors = require('cors')
 const bcrypt = require('bcrypt')
 const jwt = require('jsonwebtoken')
 const queries = require('../db/queries')
+const validate = require('../utils/validation')
 require('dotenv').config()
 
 router.get('/users', function(req, res){
@@ -15,7 +16,7 @@ router.get('/users', function(req, res){
 })
 
 // Log in
-router.post('/login', function(req, res, next) {
+router.post('/login', validate.login, function(req, res, next) {
   knex('user').where('email', req.body.email)
     .then(user => {
       if (user.length === 0) {
@@ -44,7 +45,7 @@ router.post('/login', function(req, res, next) {
 
 
 // Sign up
-  router.post('/signup', function(req, res, next) {
+  router.post('/signup', validate.signup, function(req, res, next) {
   console.log(req.body);
   knex('user').select().where('email', req.body.email)
     .then(user => {
@@ -69,7 +70,7 @@ router.post('/login', function(req, res, next) {
 //busines by user from user dashboard
 router.get('/secrets-by-user/:id', function(req, res){
     knex.from('user')
-    .innerJoin('user_secret', 'user.noid', 'user_id')
+    .innerJoin('user_secret', 'user.id', 'user_id')
     .where('user.id', req.params.id)
     .innerJoin('secret', 'secret_id', 'secret.id')
     .then(function(data){

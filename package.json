@@ -1,7 +1,7 @@
 {
-  "name": "express-auth-seeds",
+  "name": "express-with-auth",
   "version": "1.0.0",
-  "description": "",
+  "description": "A JavaScript web app built for Node.js that enables you to get authentication and authorization running fast.",
   "main": "index.js",
   "dependencies": {
     "bcrypt": "^1.0.3",

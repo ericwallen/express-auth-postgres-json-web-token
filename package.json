@@ -19,6 +19,6 @@
     "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "author": "Eric Wallen",
   "license": "ISC"
 }

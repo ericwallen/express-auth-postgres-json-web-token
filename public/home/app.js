@@ -7,13 +7,17 @@ function authorizeUser() {
   }
 }
 
-authorizeUser();
+$(() => {
+  authorizeUser()
+  $('form.login').submit(logIn)
+  $('form.signup').submit(signUp)
+})
 
 
 var statusMessage = document.getElementById('status-message')
 
 
-document.querySelector('#signUpSubmit').addEventListener('click', function(event){
+function signUp(event) {
   event.preventDefault()
   var name = document.querySelector('#name-sign-up').value
   var username = document.querySelector('#username-sign-up').value
@@ -33,10 +37,11 @@ document.querySelector('#signUpSubmit').addEventListener('click', function(event
         console.log(response);
       }
     })
-})
+}
 
 
-document.querySelector('#logInSubmit').addEventListener('click', function(event){
+function logIn(event) {
+  console.log('hello');
   event.preventDefault()
   var email = document.querySelector('#email-log-in').value
   var password = document.querySelector('#password-log-in').value
@@ -52,4 +57,4 @@ document.querySelector('#logInSubmit').addEventListener('click', function(event)
        console.log(response);
      }
    })
-})
+}

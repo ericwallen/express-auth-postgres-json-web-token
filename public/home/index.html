@@ -10,35 +10,31 @@
       <div class="cut-container">
         <h1>Express with Auth<span style="color: #CCC">[entication]</span></h1>
         <h2>A JavaScript web app that enables you to get <span class="highlight">authentication</span> and <span class="highlight">authorization</span> running fast.</h2>
-        <h3>This package has the best JavaScript security. Take a nap because you can rest easy. Awe, you're so cute when your sleeping...</h3>
         <img width="20px" style="margin-right: 20px" src="assets/jwt-logo.png" alt=""><img width="60px" src="assets/express-logo.svg" alt="">
       </div>
 <main id="container">
-
-
-
   <div class="form-containers">
     <h2 align="center">Sign Up</h1>
-    <form>
+    <form class="signup">
       <label for="name-sign-up" class="">Name</label>
       <input id="name-sign-up" class="input" type="text" name="" value=""><br>
       <label for="username-sign-up" class="">Username</label>
       <input id="username-sign-up" class="input" type="text" name="" value=""><br>
       <label for="email-sign-up" class="">email</label>
-      <input id="email-sign-up" class="input" type="text" name="" value=""><br>
+      <input id="email-sign-up" class="input" type="email" name="" value=""><br>
       <label for="password-sign-up" class="">password</label>
-      <input id="password-sign-up" class="input" type="text" name="" value=""><br>
-      <button id="signUpSubmit" type="submit" name="button">submit</button>
+      <input id="password-sign-up" class="input" type="password" name="" value=""><br>
+      <button type="submit" name="button">submit</button>
     </form>
   </div>
   <div class="form-containers">
     <h2 align="center">Log In</h1>
-      <form>
+      <form class="login">
       <label for="email-log-in" class="">email</label>
       <input id="email-log-in" class="input" type="email" name="email-log-in" ><br>
       <label for="password-log-in" class="">password</label>
       <input id="password-log-in" class="input" type="password" name="password-log-in" ><br>
-      <button id="logInSubmit" type="submit" name="button">submit</button>
+      <button type="submit" name="button">submit</button>
     </form>
   </div>
 </main>
@@ -47,12 +43,22 @@
 <div class="cut-container">
   <h1>Getting Started</h1>
   <h3>The <span class="highlight-2">sign up</span> and <span class="highlight-2">log in</span> forms above will work once you follow a few steps. Ready?</h3>
-  <p>First, note that what you see here displayed with HTML is just a shortend getting started. A "rapid setup" if you will. The more detailed version can be found on the <a href="https://github.com/ericwallen/express-with-auth">github Read Me</a> or the README.md in the root of this package you just spun up.</p>
+  <p>This is a shorter version documentation of the docs you can find on the github project. The more detailed version can be found on the <a href="https://github.com/ericwallen/express-with-auth">github Read Me</a> or the README.md in the root of this package you just spun up.</p>
   <br>
   <h2>Step 1 - Install Dependencies</h2>
   <p>This is a node package with many dependencies. Assuming you have node installed run the following command whilst inside your projects root directory</p>
   <div class="command-line">
     npm install
+  </div>
+
+  <h2>Step 2 - Create a .env file and add token</h2>
+  <p>This program a "environment variable". In order to set that up you would create a .env file and put a token inside. It migt look like this TOKEN_SECRET=new_hotness. You can name the value new_hotness whatever you want.</p>
+  <div class="command-line">
+    touch .env
+  </div>
+
+  <div class="command-line">
+    TOKEN_SECRET=new_hotness
   </div>
 
   <h2>Step 2 - Create a Database</h2>
@@ -103,7 +109,7 @@
 
 </div>
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.11/semantic.min.js"></script>
     <script src="app.js" type="text/javascript"></script>
   </body>

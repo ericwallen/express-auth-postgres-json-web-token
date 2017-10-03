@@ -3,6 +3,10 @@ body{
   color: #666;
 }
 
+body{
+  font-size: 1.3em;
+}
+
 #container{
   display: flex;
   justify-content: space-around;

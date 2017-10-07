@@ -8,6 +8,7 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: false}))
 app.use(cors())
 app.use('/', expressRoutes)
+
 app.use(express.static('public/home'))
 app.use('/dashboard', express.static('public/dashboard'))
 app.listen(port)

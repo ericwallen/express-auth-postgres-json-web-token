@@ -1,4 +1,4 @@
-const url = 'https://intense-journey-34289.herokuapp.com/'
+const url = 'https://intense-journey-34289.herokuapp.com'
 const token = localStorage.getItem('token')
 
 function authorizeUser() {

@@ -9,7 +9,7 @@
   <body>
       <div class="cut-container">
         <h1>Express with Auth<span style="color: #CCC">[entication]</span></h1>
-        <h2>A JavaScript web app that enables you to get <span class="highlight">authentication</span> and <span class="highlight">authorization</span> running fast.</h2>
+        <h2>A JavaScript web app for node that enables you to get <span class="highlight">authentication</span> and <span class="highlight">authorization</span> running <i>locally</i> and on <i>heroku</i> very fast.</h2>
         <img width="20px" style="margin-right: 20px" src="assets/jwt-logo.png" alt=""><img width="60px" src="assets/express-logo.svg" alt="">
       </div>
 <main id="container">
@@ -41,18 +41,40 @@
 <p id="status-message" style="text-align: center"></p>
 
 <div class="cut-container">
-  <h1>Getting Started</h1>
+  <h1>localhost Setup Instructions</h1>
   <h3>The <span class="highlight-2">sign up</span> and <span class="highlight-2">log in</span> forms above will work once you follow a few steps. Ready?</h3>
-  <p>This is a shorter version documentation of the docs you can find on the github project. The more detailed version can be found on the <a href="https://github.com/ericwallen/express-with-auth">github Read Me</a> or the README.md in the root of this package you just spun up.</p>
-  <br>
-  <h2>Step 1 - Install Dependencies</h2>
-  <p>This is a node package with many dependencies. Assuming you have node installed run the following command whilst inside your projects root directory</p>
+
+  <h2>Step 1 - Clone the repository</h2>
+  <p>Make a local copy of the repository by cloning it to your computer. Run this command:</p>
+  <div class="command-line">
+    git clone git@github.com:ericwallen/express-with-auth.git
+  </div>
+
+  <h2>Step 2 - Change directory</h2>
+  <p>Navigate into the new package folder by running this command:</p>
+  <div class="command-line">
+    cd express-with-auth
+  </div>
+
+
+  <h2>Step 3 - Install dependencies</h2>
+  <p>This is a node package with many dependencies. Assuming you have node installed run the following command:</p>
   <div class="command-line">
     npm install
   </div>
 
-  <h2>Step 2 - Create a .env file and add token</h2>
-  <p>This program a "environment variable". In order to set that up you would create a .env file and put a token inside. It migt look like this TOKEN_SECRET=new_hotness. You can name the value new_hotness whatever you want.</p>
+  <h2>Step 4 - Start it up</h2>
+  <p>Now boot it up and navigate to http://localhost:8080. You will see the signup, login forms as well as the instructions to install.</p>
+  <div class="command-line">
+    npm start
+  </div>
+
+  <div class="command-line">
+    http://localhost:8080
+  </div>
+
+  <h2>Step 5 - Create a .env file and add token key/value pair</h2>
+  <p>Lets create the <span class="highlight-2">"environment variable"</span>. With the touch command create the <span class="highlight-2">.env</span> file and put a token key/value inside.  </p>
   <div class="command-line">
     touch .env
   </div>
@@ -61,16 +83,17 @@
     TOKEN_SECRET=new_hotness
   </div>
 
-  <h2>Step 2 - Create a Database</h2>
-  <p>For this package to work out of the box you will want to name your database <span class="highlight-2">exampledb</span>. If you want to change that name look in the root of the package for a file called knexfile.js. Inside that you will see the path to <span class="highlight-2">postgresql://localhost/exampledb</span>. Change that to whatver your heart desires. The command you will use to create the db will look like this.</p>
+  <h2>Step 6 - Create a Database</h2>
+  <p>For this package to work out of the box you will want to name your database <span class="highlight-2">exampledb</span>. If you want to change the database name look in the root of express-with-auth for a file called knexfile.js. Inside that you will see the path to <span class="highlight-2">postgresql://localhost/exampledb</span>. Change that to whatver your heart desires. Use this command you will use to create the db:</p>
   <div class="command-line">
     createdb exampledb
   </div>
 
-  <h2>Step 3 - Migrate & Seed Database</h2>
-  <p>All the migration and seed files are ready to go. All you have to do is run the commands below. Below is a ERD diagram of how the schema will be laid out unless you change it before running the commands</p>
-  <img style="margin-bottom: 10px" src="assets/erd.png" width="600px" alt="">
+  <h2>Step 7 - Migrate & Seed Database</h2>
+  <p>This is an ERD diagram of how the posgresql table schema is laid out.</p>
 
+  <img style="margin-bottom: 10px" src="assets/erd.png" max-width="900px" alt="">
+  <p>If you are ok with how we constructed the data you can run the commands below. The ERD is for visual purposes only.</p>
   <div class="command-line">
     knex migrate:latest
   </div>
@@ -79,35 +102,89 @@
     knex seed:run
   </div>
 
-  <h2>Step 4 - Verify Everything is Working Locally</h2>
-  <p><span class="highlight-2">Log in</span> to some of these accounts to make sure everything is working. You will see the users data from a dasboard as well as a secret specific to each one. Ater you are done doing that then you can <span class="highlight-2">create a new account</span> for yourself and log in to that.</p>
 
-  <h4>Batman</h4>
+
+  <h2>Step 8 - Verify Everything is Working Locally</h2>
+  <p><span class="highlight-2">Log in</span> the precreated accounts you see below. The password for all the default users is "password". After login you will see the users dasboard as well as a secret specific to each user. The data specific to each user is the auhorized to see.</p>
+
+  <h3>Batman</h3>
   <div class="command-line">
     email: darkness@pitchblack.ceo <br>
     password: password
   </div>
 
-  <h4>Superman</h4>
+  <h3>Superman</h3>
   <div class="command-line">
     email: super@man.com <br>
     password: password
   </div>
 
-  <h4>Wonder Woman</h4>
+  <h3>Wonder Woman</h3>
   <div class="command-line">
     email: women@kickass.com <br>
     password: password
   </div>
 
-  <h4>Captian America</h4>
+  <h3>Captian America</h3>
   <div class="command-line">
     email: yeah@merica.com <br>
     password: password
   </div>
 
 
+  <h1 style="margin-top: 70px">Heroku Deploy Instructions</h1>
+  <h3>Heroku has become known to developers as a popular place to deploy full stack apps so we show you how to that however, you can deploy this whever you feel comfotable.</h3>
+
+
+  <h2>Step 1 - Create a Heroku account and login</h2>
+  <p>If you don't alread have a heroku account you can create one at <a href="https://heroku.com/">heroku.com</a>. After you do that run the command you see below in your terminal. You will be prompted for your email address and password.</p>
+  <div class="command-line">
+    heroku login
+  </div>
+
+  <h2>Step 2 - Run heroku create</h2>
+  <p>You can initialize a new heroku app by running this command:</p>
+  <div class="command-line">
+    heroku create
+  </div>
+
+  <h2>Step 3 - Copy the URL to 2 places inside your app</h2>
+  <p>When you did "heroku create" there was a web address for your new app. It would look something like this "https://intense-journey-34289.herokuapp.com/". You need to copy that and replace the "http://localhost:8080/" inside two files. </p>
+  <ol>
+    <li>public > dashboard > app.js </li>
+    <li>public > home > app.js</li>
+  </ol>
+  <div class="command-line">
+    // Replace this<br>
+    var baseURL = "http://localhost:8080/"<br><br>
+
+    // With something like this<br>
+    var baseURL = "https://intense-journey-34289.herokuapp.com/"
+  </div>
+
+  <h2>Step 4 - push your app files to the server</h2>
+  <p>Your files are ready to to be transfered to heroku. Do that with this command: </p>
+  <div class="command-line">
+    git push heroku master
+  </div>
+
+  <h2>Step 5 - postgresql addon</h2>
+  <p>Provision a postgresql database with this command: </p>
+  <div class="command-line">
+    heroku addons:create heroku-postgresql:hobby-dev
+  </div>
+
+  <h2>Step 6 - add the environment varialbe key/value pair to heroku</h2>
+  <p>Just like your local host heroku needs the enviroment variable however, it is added through the command line. Run this command:</p>
+  <div class="command-line">
+    heroku config:set TOKEN_SECRET=new_hotness
+  </div>
+
 </div>
+
+
+
+
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.2.11/semantic.min.js"></script>

@@ -1,4 +1,4 @@
-const url = 'https://intense-journey-34289.herokuapp.com'
+const url = 'http://localhost:8080/'
 const token = localStorage.getItem('token')
 
 function authorizeUser() {
@@ -25,7 +25,7 @@ function signUp(event) {
   var password = document.querySelector('#password-sign-up').value
   var data = {name, username, email, password}
   console.log(data);
-  $.post(`${url}/signup`, data)
+  $.post(`${url}signup`, data)
     .then(response => {
       if (response.message){
         statusMessage.innerHTML = response.message
@@ -46,7 +46,7 @@ function logIn(event) {
   var email = document.querySelector('#email-log-in').value
   var password = document.querySelector('#password-log-in').value
   var data = {email, password}
-  $.post(`${url}/login`, data)
+  $.post(`${url}login`, data)
    .then(response => {
      if (response.error) {
        statusMessage.innerHTML = response.error

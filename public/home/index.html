@@ -42,7 +42,7 @@
 
 <div class="cut-container">
   <h1>localhost Setup Instructions</h1>
-  <h3>The <span class="highlight-2">sign up</span> and <span class="highlight-2">log in</span> forms above will work once you follow a few steps. Ready?</h3>
+  <h3>The sign up and log in forms above will work once you follow a few steps. Ready?</h3>
 
   <h2>Step 1 - Clone the repository</h2>
   <p>Make a local copy of the repository by cloning it to your computer. Run this command:</p>
@@ -63,7 +63,13 @@
     npm install
   </div>
 
-  <h2>Step 4 - Start it up</h2>
+  <h2>Step 4 - Create a .env file and add token key/value pair</h2>
+  <p>Lets create the "environment variable". With the touch command create the .env file and put a token key/value inside.  </p>
+  <div class="command-line">
+    touch .env
+  </div>
+
+  <h2>Step 5 - Start it up</h2>
   <p>Now boot it up and navigate to http://localhost:8080. You will see the signup, login forms as well as the instructions to install.</p>
   <div class="command-line">
     npm start
@@ -73,18 +79,12 @@
     http://localhost:8080
   </div>
 
-  <h2>Step 5 - Create a .env file and add token key/value pair</h2>
-  <p>Lets create the <span class="highlight-2">"environment variable"</span>. With the touch command create the <span class="highlight-2">.env</span> file and put a token key/value inside.  </p>
-  <div class="command-line">
-    touch .env
-  </div>
-
   <div class="command-line">
     TOKEN_SECRET=new_hotness
   </div>
 
   <h2>Step 6 - Create a Database</h2>
-  <p>For this package to work out of the box you will want to name your database <span class="highlight-2">exampledb</span>. If you want to change the database name look in the root of express-with-auth for a file called knexfile.js. Inside that you will see the path to <span class="highlight-2">postgresql://localhost/exampledb</span>. Change that to whatver your heart desires. Use this command you will use to create the db:</p>
+  <p>For this package to work out of the box you will want to name your database exampledb. If you want to change the database name look in the root of express-with-auth for a file called knexfile.js. Inside that you will see the path to postgresql://localhost/exampledb. Change that to whatver your heart desires. Use this command you will use to create the db:</p>
   <div class="command-line">
     createdb exampledb
   </div>
@@ -105,7 +105,7 @@
 
 
   <h2>Step 8 - Verify Everything is Working Locally</h2>
-  <p><span class="highlight-2">Log in</span> the precreated accounts you see below. The password for all the default users is "password". After login you will see the users dasboard as well as a secret specific to each user. The data specific to each user is the auhorized to see.</p>
+  <p>Log in to the precreated accounts you see below. The password for all the default users is "password". After login you will see the users dasboard as well as a secret specific to each user. The data specific to each user is the auhorized to see.</p>
 
   <h3>Batman</h3>
   <div class="command-line">
@@ -162,24 +162,42 @@
     var baseURL = "https://intense-journey-34289.herokuapp.com/"
   </div>
 
-  <h2>Step 4 - push your app files to the server</h2>
+  <h2>Step 5 - Save and commit</h2>
+  <p>Now save your work and then commit </p>
+  <div class="command-line">
+    git add -A
+  </div>
+  <div class="command-line">
+    git commit -m "commit"
+  </div>
+
+
+  <h2>Step 6 - Push your app files to the server</h2>
   <p>Your files are ready to to be transfered to heroku. Do that with this command: </p>
   <div class="command-line">
     git push heroku master
   </div>
 
-  <h2>Step 5 - postgresql addon</h2>
-  <p>Provision a postgresql database with this command: </p>
-  <div class="command-line">
-    heroku addons:create heroku-postgresql:hobby-dev
-  </div>
-
-  <h2>Step 6 - add the environment varialbe key/value pair to heroku</h2>
+  <h2>Step 7 - add the environment varialbe key/value pair to heroku</h2>
   <p>Just like your local host heroku needs the enviroment variable however, it is added through the command line. Run this command:</p>
   <div class="command-line">
     heroku config:set TOKEN_SECRET=new_hotness
   </div>
 
+  <h2>Step 8 - postgresql addon</h2>
+  <p>Provision a postgresql database with this command: </p>
+  <div class="command-line">
+    heroku addons:create heroku-postgresql:hobby-dev
+  </div>
+
+  <h2>Step 9 - Migrate & Seed heroku Database</h2>
+  <p>To migrate and seed on the server run the following commands:</p>
+  <div class="command-line">
+    heroku run knex migrate:latest
+  </div>
+  <div class="command-line">
+    heroku run knex seed:run
+  </div>
 </div>
 
 

@@ -4,35 +4,7 @@
 
 ## A JavaScript web app for node that enables you to get <span class="highlight">authentication</span> and <span class="highlight">authorization</span> running _locally_ and on _heroku_ very fast.
 
-![](assets/jwt-logo.png)![](assets/express-logo.svg)</div>
-
-<main id="container">
-
-<div class="form-containers">
-
-## Sign Up
-
-<form class="signup"><label for="name-sign-up" class="">Name</label> <input id="name-sign-up" class="input" type="text" name="" value="">  
-<label for="username-sign-up" class="">Username</label> <input id="username-sign-up" class="input" type="text" name="" value="">  
-<label for="email-sign-up" class="">email</label> <input id="email-sign-up" class="input" type="email" name="" value="">  
-<label for="password-sign-up" class="">password</label> <input id="password-sign-up" class="input" type="password" name="" value="">  
-<button type="submit" name="button">submit</button></form>
-
-</div>
-
-<div class="form-containers">
-
-## Log In
-
-<form class="login"><label for="email-log-in" class="">email</label> <input id="email-log-in" class="input" type="email" name="email-log-in">  
-<label for="password-log-in" class="">password</label> <input id="password-log-in" class="input" type="password" name="password-log-in">  
-<button type="submit" name="button">submit</button></form>
-
-</div>
-
-</main>
-
-<div class="cut-container">
+![](public/home/assets/jwt-logo.png)![](public/home/assets/express-logo.svg)</div>
 
 # localhost Setup Instructions
 
@@ -64,7 +36,7 @@ Lets create the "environment variable". With the touch command create the .env f
 
 ## Step 5 - Start it up
 
-Now boot it up and navigate to http://localhost:8080\. You will see the signup, login forms as well as the instructions to install.
+Now boot it up and navigate to http://localhost:8080/. You will see the signup, login forms as well as the instructions to install.
 
 <div class="command-line">npm start</div>
 
@@ -74,7 +46,7 @@ Now boot it up and navigate to http://localhost:8080\. You will see the signup, 
 
 ## Step 6 - Create a Database
 
-For this package to work out of the box you will want to name your database exampledb. If you want to change the database name look in the root of express-with-auth for a file called knexfile.js. Inside that you will see the path to postgresql://localhost/exampledb. Change that to whatver your heart desires. Use this command you will use to create the db:
+For this package to work out of the box you will want to name your database exampledb. If you want to change the database name look in the root of express-with-auth for a file called knexfile.js. Inside that you will see the path to postgresql://localhost/exampledb. Change that to whatever your heart desires. Use this command you will use to create the db:
 
 <div class="command-line">createdb exampledb</div>
 
@@ -82,7 +54,7 @@ For this package to work out of the box you will want to name your database exam
 
 This is an ERD diagram of how the posgresql table schema is laid out.
 
-![](assets/erd.png)
+![](public/home/assets/erd.png)
 
 If you are ok with how we constructed the data you can run the commands below. The ERD is for visual purposes only.
 
@@ -92,7 +64,7 @@ If you are ok with how we constructed the data you can run the commands below. T
 
 ## Step 8 - Verify Everything is Working Locally
 
-Log in to the precreated accounts you see below. The password for all the default users is "password". After login you will see the users dasboard as well as a secret specific to each user. The data specific to each user is the auhorized to see.
+Log in to the pre-created accounts you see below. The password for all the default users is "password". After login you will see the users dashboard as well as a secret specific to each user. The data specific to each user is the authorized to see.
 
 ### Batman
 
@@ -109,14 +81,14 @@ password: password</div>
 <div class="command-line">email: women@kickass.com  
 password: password</div>
 
-### Captian America
+### Captain America
 
 <div class="command-line">email: yeah@merica.com  
 password: password</div>
 
 # Heroku Deploy Instructions
 
-### Heroku has become known to developers as a popular place to deploy full stack apps so we show you how to that however, you can deploy this whever you feel comfotable.
+### Heroku has become known to developers as a popular place to deploy full stack apps so we show you how to that however, you can deploy this whenever you feel comfortable.
 
 ## Step 1 - Create a Heroku account and login
 

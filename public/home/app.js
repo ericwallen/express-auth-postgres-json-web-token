@@ -1,4 +1,4 @@
-const url = 'http://localhost:8080/'
+const url = 'https://gentle-tundra-15984.herokuapp.com/'
 const token = localStorage.getItem('token')
 
 function authorizeUser() {

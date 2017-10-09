@@ -7,8 +7,6 @@
 
 # localhost Setup Instructions
 
-### The sign up and log in forms above will work once you follow a few steps. Ready?
-
 ## Step 1 - Clone the repository
 
 Make a local copy of the repository by cloning it to your computer. Run this command:
@@ -40,6 +38,9 @@ Lets create the "environment variable". With the touch command create the .env f
 ```
 touch .env
 ```
+```
+TOKEN_SECRET=new_hotness
+```
 
 ## Step 5 - Start it up
 
@@ -53,9 +54,7 @@ npm start
 http://localhost:8080
 ```
 
-```
-TOKEN_SECRET=new_hotness
-```
+
 
 ## Step 6 - Create a Database
 
@@ -195,7 +194,3 @@ heroku run knex migrate:latest
 ```
 heroku run knex seed:run
 ```
-
-
-``
-`

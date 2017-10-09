@@ -68,6 +68,9 @@
   <div class="command-line">
     touch .env
   </div>
+  <div class="command-line">
+    TOKEN_SECRET=new_hotness
+  </div>
 
   <h2>Step 5 - Start it up</h2>
   <p>Now boot it up and navigate to http://localhost:8080. You will see the signup, login forms as well as the instructions to install.</p>
@@ -79,9 +82,7 @@
     http://localhost:8080
   </div>
 
-  <div class="command-line">
-    TOKEN_SECRET=new_hotness
-  </div>
+
 
   <h2>Step 6 - Create a Database</h2>
   <p>For this package to work out of the box you will want to name your database exampledb. If you want to change the database name look in the root of express-with-auth for a file called knexfile.js. Inside that you will see the path to postgresql://localhost/exampledb. Change that to whatever your heart desires. Use this command you will use to create the db:</p>
